@@ -356,3 +356,43 @@ public class Main {
         input.close();
     }
 }
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter a string (you can include space as well)");
+        String text = input.nextLine();
+
+        String compressed = compress(text);
+
+        System.out.println("The compressed string along with the counts of repeated characters is:");
+        System.out.println(compressed);
+        input.close();
+    }
+
+    static String compress(String text) {
+        if (text.length() == 0) {
+            return "";
+        }
+
+        String result = "";
+        char current = text.charAt(0);
+        int count = 1;
+
+        for (int i = 1; i < text.length(); i++) {
+            if (text.charAt(i) == current) {
+                count++;
+            } else {
+                result += current + String.valueOf(count);
+                current = text.charAt(i);
+                count = 1;
+            }
+        }
+
+        result += current + String.valueOf(count);
+        return result;
+    }
+}

@@ -331,3 +331,28 @@ public class Main {
         input.close();
     }
 }
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String[] days = {"Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"};
+        int[] monthDays = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        System.out.println("Input the month(1-12)");
+        int month = input.nextInt();
+
+        System.out.println("Input date (1-31)");
+        int date = input.nextInt();
+
+        int dayOfYear = date;
+        for (int i = 0; i < month - 1; i++) {
+            dayOfYear += monthDays[i];
+        }
+
+        System.out.println("Name of the date:");
+        System.out.println(days[dayOfYear % 7]);
+        input.close();
+    }
+}

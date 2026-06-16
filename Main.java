@@ -181,3 +181,31 @@ public class Main {
         return Arrays.equals(first, second);
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        String[] dictionary1 = {"cat", "flag", "green", "country", "w3resource"};
+        String[] dictionary2 = {"cat", "dog", "red", "is", "am"};
+
+        System.out.println(longestWords(dictionary1));
+        System.out.println(longestWords(dictionary2));
+    }
+
+    static List<String> longestWords(String[] dictionary) {
+        List<String> result = new ArrayList<>();
+        int maxLength = 0;
+
+        for (String word : dictionary) {
+            if (word.length() > maxLength) {
+                result.clear();
+                result.add(word);
+                maxLength = word.length();
+            } else if (word.length() == maxLength) {
+                result.add(word);
+            }
+        }
+
+        return result;
+    }
+}

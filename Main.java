@@ -52,3 +52,22 @@ public class Main {
         System.out.println(result);
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "wresource";
+
+        System.out.println("Original String: " + text);
+        System.out.println("First unique character of the above: " + firstUniqueIndex(text));
+    }
+
+    static int firstUniqueIndex(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (text.indexOf(text.charAt(i)) == text.lastIndexOf(text.charAt(i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}

@@ -135,3 +135,27 @@ public class Main {
         System.out.println();
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {1, 4, 6, 7, 6, 2};
+        int value = 6;
+
+        System.out.println("Original array: " + Arrays.toString(numbers));
+        System.out.println("The length of the new array is: " + removeValue(numbers, value));
+    }
+
+    static int removeValue(int[] numbers, int value) {
+        int index = 0;
+
+        for (int number : numbers) {
+            if (number != value) {
+                numbers[index] = number;
+                index++;
+            }
+        }
+
+        return index;
+    }
+}

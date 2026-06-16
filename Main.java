@@ -225,3 +225,12 @@ public class Main {
         System.out.println("Rotated Array: " + Arrays.toString(numbers));
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {50, -20, 0, 30, 40, 60, 10};
+
+        System.out.println(numbers[0] == numbers[numbers.length - 1]);
+    }
+}

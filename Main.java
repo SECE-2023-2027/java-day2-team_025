@@ -276,3 +276,40 @@ public class Main {
         input.close();
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Input number of rows/columns (0 to exit)");
+            int size = input.nextInt();
+
+            if (size == 0) {
+                break;
+            }
+
+            int[][] table = new int[size + 1][size + 1];
+
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    table[row][col] = input.nextInt();
+                    table[row][size] += table[row][col];
+                    table[size][col] += table[row][col];
+                    table[size][size] += table[row][col];
+                }
+            }
+
+            System.out.println("Result:");
+            for (int row = 0; row <= size; row++) {
+                for (int col = 0; col <= size; col++) {
+                    System.out.print(table[row][col] + " ");
+                }
+                System.out.println();
+            }
+        }
+
+        input.close();
+    }
+}

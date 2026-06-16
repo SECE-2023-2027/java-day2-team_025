@@ -159,3 +159,25 @@ public class Main {
         return index;
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 = "wxyz";
+        String str2 = "zyxw";
+
+        System.out.println("String-1 : " + str1);
+        System.out.println("String-2 : " + str2);
+        System.out.println("Check if two given strings are anagrams or not?: " + areAnagrams(str1, str2));
+    }
+
+    static boolean areAnagrams(String str1, String str2) {
+        char[] first = str1.toCharArray();
+        char[] second = str2.toCharArray();
+
+        Arrays.sort(first);
+        Arrays.sort(second);
+
+        return Arrays.equals(first, second);
+    }
+}

@@ -313,3 +313,21 @@ public class Main {
         input.close();
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Input the string:");
+        String text = input.nextLine();
+
+        String result = text.replace("python", "#TEMP#");
+        result = result.replace("java", "python");
+        result = result.replace("#TEMP#", "java");
+
+        System.out.println("New string:");
+        System.out.println(result);
+        input.close();
+    }
+}

@@ -71,3 +71,67 @@ public class Main {
         return -1;
     }
 }
+
+
+public class Main {
+    static class Node {
+        int value;
+        Node next;
+
+        Node(int value) {
+            this.value = value;
+        }
+    }
+
+    public static void main(String[] args) {
+        Node head = createList(new int[] {1, 2, 3, 4, 5});
+
+        System.out.println("Original node:");
+        printList(head);
+
+        head = removeNthFromEnd(head, 2);
+
+        System.out.println("After removing 2nd element from end:");
+        printList(head);
+    }
+
+    static Node createList(int[] values) {
+        Node head = new Node(values[0]);
+        Node current = head;
+
+        for (int i = 1; i < values.length; i++) {
+            current.next = new Node(values[i]);
+            current = current.next;
+        }
+
+        return head;
+    }
+
+    static Node removeNthFromEnd(Node head, int n) {
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node first = dummy;
+        Node second = dummy;
+
+        for (int i = 0; i <= n; i++) {
+            first = first.next;
+        }
+
+        while (first != null) {
+            first = first.next;
+            second = second.next;
+        }
+
+        second.next = second.next.next;
+        return dummy.next;
+    }
+
+    static void printList(Node head) {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.value + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+}

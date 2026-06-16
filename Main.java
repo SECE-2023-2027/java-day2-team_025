@@ -234,3 +234,45 @@ public class Main {
         System.out.println(numbers[0] == numbers[numbers.length - 1]);
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Input number of students:");
+        int numberOfStudents = input.nextInt();
+
+        String highestName = "";
+        String highestId = "";
+        int highestScore = -1;
+
+        String lowestName = "";
+        String lowestId = "";
+        int lowestScore = 101;
+
+        System.out.println("Input Student Name, ID, Score:");
+        for (int i = 0; i < numberOfStudents; i++) {
+            String name = input.next();
+            String id = input.next();
+            int score = input.nextInt();
+
+            if (score > highestScore) {
+                highestScore = score;
+                highestName = name;
+                highestId = id;
+            }
+
+            if (score < lowestScore) {
+                lowestScore = score;
+                lowestName = name;
+                lowestId = id;
+            }
+        }
+
+        System.out.println("name, ID of the highest score and the lowest score:");
+        System.out.println(highestName + " " + highestId);
+        System.out.println(lowestName + " " + lowestId);
+        input.close();
+    }
+}

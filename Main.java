@@ -209,3 +209,19 @@ public class Main {
         return result;
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {20, 30, 40};
+
+        System.out.println("Original Array: " + Arrays.toString(numbers));
+
+        int first = numbers[0];
+        numbers[0] = numbers[1];
+        numbers[1] = numbers[2];
+        numbers[2] = first;
+
+        System.out.println("Rotated Array: " + Arrays.toString(numbers));
+    }
+}
